@@ -1,0 +1,23 @@
+package com.tutorials;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.tutorials.domain.User;
+
+
+@SpringBootTest
+public class UserUnitTests {
+	
+	@Test
+	public void testSetter() {
+		User user = new User(); 
+		user.setUserId("1");;
+		user.setPassWord(123456);
+		user.setUserName("SamLEE");
+		System.out.println(user.getUserId());
+		System.out.println(user.getPassWord());
+		System.out.println(user.getUserName());
+	}
+
+}

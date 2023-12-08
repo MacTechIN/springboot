@@ -1,0 +1,19 @@
+package com.tutorials;
+
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.tutorials.domain.User;
+
+@SpringBootTest
+public class UserTest {
+
+	public void testGetterSetter() {
+		User sam = new User("1", 1, "Sam");
+		User woong = new User("2", 2, "Woong");	
+		
+		System.out.println(sam);
+		System.out.println(woong);
+
+	}
+
+}

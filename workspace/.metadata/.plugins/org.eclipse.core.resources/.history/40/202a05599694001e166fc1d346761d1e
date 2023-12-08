@@ -1,0 +1,18 @@
+package com.tutorials.tests;
+
+import com.tutorials.domain.User;
+
+public class UserTest {
+	
+	public static void main(String[] args) {
+		User user1 = new User(); 
+		user1.setUserId("1");
+		user1.setUserName("SamLEE");
+		
+		User user2 = new User("2", 2, "이시웅");
+	
+		System.out.println("mem1:"+ user1);
+		System.out.println("mem2:" + user2);
+	}
+
+}

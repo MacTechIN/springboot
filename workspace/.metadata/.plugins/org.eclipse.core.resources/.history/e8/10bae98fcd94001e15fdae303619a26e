@@ -1,0 +1,21 @@
+package com.tutorials.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
+public class LogininController {
+	@GetMapping("/login.do")
+	public String login(HttpServletRequest req) {
+		System.out.println("[Login Controller] /");
+		String uid = req.getParameter("uid");
+		String pwd = req.getParameter("pwd");
+		
+		
+		return "login";
+		
+	}
+
+}

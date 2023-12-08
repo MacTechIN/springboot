@@ -1,0 +1,47 @@
+[스프링프레임워 개발환경]
+
+(환경변수)
+JAVA_HOME : C:\Java\1.8.202
+Path : %JAVA_HOME%\bin
+
+(SpringTool Suite 4)
+https://spring.io/tools
+4.20.1 - WINDOWS X86_64
+cmd : java -jar spring-tool-suite-4-4.20.1.RELEASE-e4.29.0-win32.win32.x86_64.self-extracting.jar
+
+(Gradle)
+version : 8.5
+https://gradle.org/install/
+GRADLE_HOME : D:\SpringBoots\gradle-8.5
+Path : %GRADLE_HOME%\bin
+cmd : gradle -v
+
+(Lombok)
+https://projectlombok.org/
+version : Download 1.18.30
+lombok.jar -> D:\SpringBoots\sts-4.20.1.RELEASE
+
+(Tomcat)
+version : 9.0.83
+server.xml
+ - line 22 : <Server port="9005" shutdown="SHUTDOWN">
+ - line 69 : 
+    <Connector port="9083" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />	
+ - line 75 :
+    <!--
+    <Connector executor="tomcatThreadPool"
+               port="9083" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
+    -->
+
+tomcat: /bin
+	- startup.bat
+	- shutdown.bat
+	- localhost:9083

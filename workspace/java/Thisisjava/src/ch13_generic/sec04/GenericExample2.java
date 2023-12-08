@@ -1,0 +1,45 @@
+package ch13_generic.sec04;
+
+public class GenericExample2 {
+	// 제한된 타입 파라미터를 갖는 제네릭 메소드
+	// Number의 하위 클래스만 타입으로 지정 가능
+	// public static <T extends Number> boolean compare(T t1, T t2) {
+	public static <T> boolean compare(T t1, T t2) {
+		// T의 타입을 출력
+		System.out.println("compare(" + t1.getClass().getSimpleName() + ", " +
+				t2.getClass().getSimpleName() + ")");
+
+		if(t1 instanceof Integer) {
+			// Number의 메소드 사용
+			double v1 = ((Integer)t1).intValue();
+			double v2 = ((Integer)t2).intValue();
+			return (v1 == v2);
+		}
+		else if(t1 instanceof Double) {
+			// Number의 메소드 사용
+			double v1 = ((Double)t1).doubleValue();
+			double v2 = ((Double)t2).doubleValue();
+			return (v1 == v2);
+		}
+		else if(t1 instanceof String) {
+			return t1.equals(t2);
+		}
+
+		return (t1 == t2);
+	}
+
+	public static void main(String[] args) {
+		boolean result0 = compare("10", "10"); // String
+		System.out.println(result0);
+		System.out.println();
+
+		// 제네릭 메소드 호출
+		boolean result1 = compare(20, 20); // Integer
+		System.out.println(result1);
+		System.out.println();
+
+		//제네릭 메소드 호출
+		boolean result2 = compare(4.5, 4.5); // Double
+		System.out.println(result2);
+	}
+}

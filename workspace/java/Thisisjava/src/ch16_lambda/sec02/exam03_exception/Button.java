@@ -1,0 +1,26 @@
+package ch16_lambda.sec02.exam03_exception;
+
+public class Button {
+	//정적 중첩 인터페이스
+	@FunctionalInterface
+	public static interface ClickListener {
+		//추상 메소드
+		void onClick();
+	}
+	
+	//필드
+	private ClickListener clickListener;
+		
+	//메소드
+	public void setClickListener(ClickListener clickListener) {
+		this.clickListener = clickListener;		
+	}
+	
+	public void click() throws ClickListenerException {
+		if(clickListener == null) {
+			throw new ClickListenerException("리스너가 등록되지 않았습니다");
+		}
+
+		this.clickListener.onClick();
+	}
+}
